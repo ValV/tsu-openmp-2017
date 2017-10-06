@@ -25,8 +25,10 @@ $(BINDIR):
 
 convert: ; @
 	for sfile in *.cpp *.h; do
-		cp -up $$sfile{,.bak}
-		iconv -f cp1251 -t utf-8 -o $$sfile $$sfile.bak
+		if [ -r $$sfile ]; then
+			cp -up $$sfile{,.bak}
+			iconv -f cp1251 -t utf-8 -o $$sfile $$sfile.bak
+		fi;
 	done
 
 run: all
