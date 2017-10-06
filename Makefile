@@ -1,7 +1,7 @@
 # Place this file in the folder with main.cpp
 
 CC=g++
-CPPFLAGS=-g3
+CPPFLAGS=-fopenmp
 LDFLAGS=-fopenmp
 BINDIR=Debug
 PROG=main
